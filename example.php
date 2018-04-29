@@ -10,7 +10,7 @@ echo 'Requested phone number is +'.$number.PHP_EOL;
 //loop until an sms received
 echo 'Waiting code...'.PHP_EOL;
 $sms = $api->get_sms($number, 10, 'cn');
-while($sms === false) {
+while(!$sms) {
     sleep(5);
     $sms = $api->get_sms($number, 10, 'cn');
 }
